@@ -20,11 +20,15 @@ const { PageTitle } = Astro.props;
 </html>
 
 <script is:inline>
-	if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-		document.documentElement.classList.add('dark')
-	}else{
-		document.documentElement.classList.remove('dark')
+	function updateTheme() {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
 	}
+	updateTheme();
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
 </script>
 
 <style is:global>
