@@ -1,0 +1,24 @@
+---
+const { PageTitle } = Astro.props;
+---
+<html lang="zh">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- <link rel="icon" type="image/x-icon" href="https://cravatar.com/avatar/5FBB13B635295D1226A17B782951C309?s=400&amp;f=mp"> -->
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="keywords" content="袁某人,博客,主页"/>
+		<meta name="description" content="袁某人的个人博客，记录生活和开发笔记" />
+		<title>{PageTitle && PageTitle+" - "} 袁某人博客</title>
+	</head>
+	<body class="bg-slate-50 space-y-6">
+        <slot />
+	</body>
+</html>
+
+<style is:global>
+	::-webkit-scrollbar{
+		display:none
+	}
+</style>
