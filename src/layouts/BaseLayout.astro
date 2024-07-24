@@ -12,12 +12,20 @@ const { PageTitle } = Astro.props;
 		<meta name="description" content="袁某人的个人博客，记录生活和开发笔记" />
 		<title>{PageTitle && PageTitle+" - "} 袁某人博客</title>
 	</head>
-	<body class="bg-slate-50 space-y-6">
+	<body class="bg-slate-50 text-neutral-900 space-y-6 dark:bg-slate-800 dark:text-neutral-400">
         <slot />
 
 		<div class="ripple"></div>
 	</body>
 </html>
+
+<script is:inline>
+	if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+		document.documentElement.classList.add('dark')
+	}else{
+		document.documentElement.classList.remove('dark')
+	}
+</script>
 
 <style is:global>
 	::-webkit-scrollbar{

@@ -1,11 +1,11 @@
-<section id="BackToTopBox" class="container mx-auto sticky bottom-0">
+<section id="BackToTopBox" class="container mx-auto sticky bottom-0 pointer-events-none z-50">
 	<div class="flex justify-end">
-		<button class="text-center text-lg font-light space-x-5 uppercase mb-5" style="writing-mode: tb-rl;">👆 back to top</button>
+		<button id="backToTopButton" class="text-center text-lg font-light space-x-5 uppercase mb-5 cursor-pointer pointer-events-auto" style="writing-mode: tb-rl;">👆 back to top</button>
 	</div>
 </section>
 
 
-<!-- <script>
+<script>
 	const backToTopButton = document.getElementById('backToTopButton');
 	let timer = null;
 
@@ -31,4 +31,4 @@
 		});
 	});
 	window.addEventListener('scroll', toggleBackToTopButton);
-</script> -->
+</script>
