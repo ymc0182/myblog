@@ -14,11 +14,65 @@ const { PageTitle } = Astro.props;
 	</head>
 	<body class="bg-slate-50 space-y-6">
         <slot />
+
+		<div class="ripple"></div>
 	</body>
 </html>
 
 <style is:global>
 	::-webkit-scrollbar{
 		display:none
+	}
+
+	.ripple::after {
+		background-repeat: repeat;
+		content: '';
+		height: 300%;
+		left: -100%;
+		opacity: 0.08;
+		pointer-events: none;
+		position: fixed;
+		top: -100%;
+		width: 300%;
+		will-change: transform;
+		z-index: 9999;
+		animation: grain 6s steps(10) infinite;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAMAAAC3Ycb+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDAyIDc5LjE2NDQ2MCwgMjAyMC8wNS8xMi0xNjowNDoxNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjIgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjEzM0U3NUUzNzIwOTExRUJBN0M4REJEMDgzQzVCMDkyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjEzM0U3NUU0NzIwOTExRUJBN0M4REJEMDgzQzVCMDkyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTMzRTc1RTE3MjA5MTFFQkE3QzhEQkQwODNDNUIwOTIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTMzRTc1RTI3MjA5MTFFQkE3QzhEQkQwODNDNUIwOTIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5m8GJLAAAABlBMVEX///////9V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);
+	}
+
+	@keyframes grain {
+		0% {
+			transform: translate(20%, -15%);
+		}
+		10% {
+			transform: translate(-20%, -15%);
+		}
+		20% {
+			transform: translate(20%, -5%);
+		}
+		30% {
+			transform: translate(-20%, -5%);
+		}
+		40% {
+			transform: translate(20%, 5%);
+		}
+		50% {
+			transform: translate(-20%, 5%);
+		}
+		60% {
+			transform: translate(20%, 15%);
+		}
+		70% {
+			transform: translate(-20%, 15%);
+		}
+		80% {
+			transform: translate(20%, 5%);
+		}
+		90% {
+			transform: translate(-20%, 5%);
+		}
+		100% {
+			transform: translate(20%, -5%);
+		}
 	}
 </style>
