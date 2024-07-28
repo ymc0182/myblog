@@ -2,11 +2,11 @@
 const { url,frontmatter } = Astro.props;
 ---
 
-<article class="border bg-white rounded-lg overflow-hidden aspect-auto p-2.5 dark:bg-neutral-800 dark:border-neutral-600">
-    <div class="border rounded-md p-1 dark:border-neutral-700"><img class="rounded-md object-cover aspect-video" src="https://docs.astro.build/assets/rose.webp"></div>
+<article class="border border-neutral-100 shadow-lg shadow-gray-50 bg-white rounded-2xl overflow-hidden aspect-auto p-2.5 dark:bg-neutral-800 dark:border-neutral-600">
+    <img class="rounded-lg object-cover aspect-video" src="https://docs.astro.build/assets/rose.webp" loading="lazy">
     <div class="px-1 pt-2.5">
-        <h1 class="font-semibold">我的第一篇博客文章</h1>
-        <p class="text-neutral-600 font-light text-sm text-justify line-clamp-2 mb-5 h-full dark:text-neutral-400">这是我 Astro 博客的第一篇文章。这是我 Astro 博客的第一篇文章。这是我 Astro 博客的第一篇文章。这是我 Astro 博客的第一篇文章。</p>
-        <date class="text-sm text-neutral-600 font-mono font-light">2024-07-24</date>
+        <h1 class="font-light">我的第一篇博客文章</h1>
+        <!-- <p class="text-neutral-600 font-light text-sm text-justify line-clamp-2 mb-5 h-full dark:text-neutral-400">这是我 Astro 博客的第一篇文章。这是我 Astro 博客的第一篇文章。这是我 Astro 博客的第一篇文章。这是我 Astro 博客的第一篇文章。</p> -->
+        <date class="text-xs text-neutral-600 font-mono font-light">2024-07-24</date>
     </div>
 </article>
