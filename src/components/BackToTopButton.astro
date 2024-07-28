@@ -6,8 +6,9 @@
 
 <section class="w-full h-full fixed top-0 z-50 pointer-events-none">
 	<div class="container mx-auto h-full relative">
-		<button id="backToTopButton" class="block absolute bottom-6 right-0 text-lg font-light cursor-pointer pointer-events-auto uppercase hidden" style="writing-mode: tb-rl;">👆 back to top</button>
+		<button id="backToTopButton" class="absolute bottom-0 right-0 text-lg font-light cursor-pointer pointer-events-auto uppercase hidden" style="writing-mode: tb-rl;">👆 back to top</button>
 	</div>
+
 </section>
 
 <script>
@@ -18,11 +19,11 @@
 
 		if(timer !== null) clearTimeout(timer);
 
-		if(this.window.pageYOffset > 100){
+		if(this.window.pageYOffset > 200){
 			backToTopButton.style.display = 'block';
-			timer = setTimeout(() => {
-				backToTopButton.style.display = 'none';
-			}, 3000);
+			// timer = setTimeout(() => {
+			// 	backToTopButton.style.display = 'none';
+			// }, 3000);
 		}else{
 			backToTopButton.style.display = 'none';
 		}
@@ -37,3 +38,14 @@
 	});
 	window.addEventListener('scroll', toggleBackToTopButton);
 </script>
+
+<style>
+	#backToTopButton::after {
+		content: "";
+		display: inline-block;
+		height: 1.5rem;
+		width: 1px;
+		background: currentColor;
+		margin-top: 0.5rem;
+	}
+</style>
