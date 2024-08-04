@@ -6,7 +6,7 @@ const allPosts = await Astro.glob('./posts/*.md');
 ---
 
 <PageLayout>
-    <main class="container mx-auto py-8 px-6">
+    <main class="container mx-auto p-8">
 
         <div class="grid gap-8 grid-cols-1 lg:grid-cols-2">
             {allPosts.map((post) => <PostCard url={post.url} frontmatter={post.frontmatter} /> )}
