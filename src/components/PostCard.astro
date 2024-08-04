@@ -2,10 +2,10 @@
 const { url,frontmatter } = Astro.props;
 ---
  
-<article class="aspect-auto bg-white rounded-[16px] overflow-hidden shadow-xl shadow-neutral-100 dark:bg-neutral-900 dark:shadow-neutral-950">
+<article class="bg-white rounded-[16px] overflow-hidden shadow-neutral-100 dark:bg-neutral-900 flex flex-col">
     <div class="aspect-video overflow-hidden"><img class="w-full h-full object-cover" src="https://docs.astro.build/assets/rose.webp" loading="lazy"></div>
-    <div class="p-8">
-        <h1 class="font-semibold text-xl leading-tight tracking-wide">我的第一篇博客文章</h1>
-        <date class="inline-block text-sm text-neutral-500 font-light font-mono mt-2.5">2024-07-24</date>
+    <div class="p-8 blog_content flex flex-col basis-auto shrink-0 grow place-content-between" >
+        <div class="font-semibold text-xl leading-tight tracking-wide">{frontmatter.title}</div>
+        <div class="text-sm text-neutral-500 font-light font-mono mt-2.5">2024-07-24</div>
     </div>
 </article>
