@@ -1,8 +1,8 @@
-<header class="sticky top-0 bg-white/30 backdrop-blur border-b dark:bg-neutral-800/30 dark:border-neutral-800">
-    <div class="container mx-auto px-6 py-3">
+<header class="sticky top-0 bg-white/70 backdrop-blur-xl dark:bg-neutral-800/30">
+    <div class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center gap-5">
-            <h1 class="font-bold shrink-0"><a href="#">🥬 Mr.Yuan</a></h1>
-            <nav class="inline-flex flex-nowrap overflow-hidden overflow-x-scroll gap-0.5 text-xs font-light *:shrink-0">
+            <h1 class="font-bold shrink-0 text-xl"><a href="#">🥬 袁某博客</a></h1>
+            <nav class="inline-flex flex-nowrap overflow-hidden overflow-x-scroll gap-0.5 text-sm font-light *:shrink-0">
                 <a class="rounded px-2 py-1 transition hover:bg-neutral-100 active:bg-neutral-200 active:scale-90 dark:hover:bg-neutral-800 dark:active:bg-neutral-700" href="#">🏠 首页</a>
                 <a class="rounded px-2 py-1 transition hover:bg-neutral-100 active:bg-neutral-200 active:scale-90 dark:hover:bg-neutral-800 dark:active:bg-neutral-700" href="#">😎 关于</a>
                 <a class="rounded px-2 py-1 transition hover:bg-neutral-100 active:bg-neutral-200 active:scale-90 dark:hover:bg-neutral-800 dark:active:bg-neutral-700" href="#">✍️ 留言</a>
@@ -10,3 +10,9 @@
         </div>
     </div>
 </header>
+
+<style is:inline>
+    header {
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+</style>
