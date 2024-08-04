@@ -1,16 +1,14 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import PostCard from "../components/PostCard.astro"
+import PostCard from "../components/BlogPost.astro"
 
 const allPosts = await Astro.glob('./posts/*.md');
 ---
 
 <PageLayout>
-    <main class="container mx-auto p-8">
-
-        <div class="grid gap-8 grid-cols-1 lg:grid-cols-2">
+    <main class="container mx-auto px-6 py-8">
+        <div class="space-y-6">
             {allPosts.map((post) => <PostCard url={post.url} frontmatter={post.frontmatter} /> )}
         </div>
-
     </main>
 </PageLayout>
