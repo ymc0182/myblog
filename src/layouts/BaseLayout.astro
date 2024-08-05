@@ -32,12 +32,26 @@ const { PageTitle } = Astro.props;
 </script>
 
 <style is:global>
+	@font-face {
+		font-family: 'zql';
+		src: url('../assets/fonts/zql.woff2') format('woff2'),
+			url('../assets/fonts/zql.woff') format('woff');
+		unicode-range: U+0000-007F,
+			/* 基本拉丁字母 */
+			U+4E00-9FFF,
+			/* 基本汉字 */
+			U+2000-206F,
+			/* 通用标点符号 */
+			U+3000-303F;
+		/* 中文标点符号 */
+	}
+
 	::-webkit-scrollbar{
 		display:none
 	}
 
 	body {
-		font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+		font-family: "zql" ,"Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 	}
 
 	.ripple::after {
