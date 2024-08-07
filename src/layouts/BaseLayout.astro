@@ -12,7 +12,7 @@ const { PageTitle } = Astro.props;
 		<meta name="description" content="袁某人的个人博客，记录生活和开发笔记" />
 		<title>{PageTitle && PageTitle+" - "} 袁某人博客</title>
 	</head>
-	<body class="h-full w-full bg-white text-[#1d1d1f] dark:bg-neutral-950 dark:text-neutral-400 antialiased scroll-smooth" ontouchstart="ontouchstart">
+	<body class="h-full w-full bg-white text-[#1d1d1f] dark:bg-neutral-900 dark:text-neutral-400 antialiased scroll-smooth" ontouchstart="ontouchstart">
         <slot />
 
 		<!-- <div class="ripple"></div> -->
@@ -36,14 +36,10 @@ const { PageTitle } = Astro.props;
 		font-family: 'zql';
 		src: url('../assets/fonts/zql.woff2') format('woff2'),
 			url('../assets/fonts/zql.woff') format('woff');
-		unicode-range: U+0000-007F,
-			/* 基本拉丁字母 */
-			U+4E00-9FFF,
-			/* 基本汉字 */
-			U+2000-206F,
-			/* 通用标点符号 */
-			U+3000-303F;
-		/* 中文标点符号 */
+	}
+	@font-face {
+		font-family: 'hm';
+		src: url('../assets/fonts/hm.woff2') format('woff2'),
 	}
 
 	::-webkit-scrollbar{
@@ -51,7 +47,7 @@ const { PageTitle } = Astro.props;
 	}
 
 	body {
-		font-family: "zql" ,"Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+		font-family: "hm" ,"Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 	}
 
 	.ripple::after {
