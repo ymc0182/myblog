@@ -4,16 +4,60 @@ import FooterComponent from "../components/layout/FooterComponent.astro";
 import HeaderComponent from "../components/layout/HeaderComponent.astro";
 import BaseLayout from "./BaseLayout.astro";
 
-const { PageTitle } = Astro.props;
+
+
+const { frontmatter  } = Astro.props;
 ---
 
-<BaseLayout PageTitle = { PageTitle }>
+<BaseLayout PageTitle = { frontmatter.title }>
 
     <HeaderComponent />
 
-    <slot />
+    <main class="container mx-auto px-6 py-8">
+        <article class="post-content text-base ">
+            <slot />
+        </article>
+    </main>
 
     <FooterComponent />
     
     <BackToTopButton />
+
 </BaseLayout>
+
+
+<style is:global>
+    .post-content p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+    }
+
+    .post-content img {
+        width: auto;
+        max-width: 100%;
+    }
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base{
+        h1, h2, h3, h4, h5 { 
+            @apply font-bold;
+         }
+         h1 {
+            @apply text-3xl;
+         }
+         h2 {
+            @apply text-2xl;
+         }
+         h3 {
+            @apply text-xl;
+         }
+         h4 {
+            @apply text-lg;
+         }
+    }
+
+</style>
